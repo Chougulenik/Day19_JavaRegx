@@ -7,6 +7,7 @@ public class RegularExpression {
 
 	public static void main(String[] args) {
 		
+		RegularExpression regex = new RegularExpression();
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter your first name :");
 		String firstName = scan.nextLine();
@@ -18,6 +19,8 @@ public class RegularExpression {
 		String mobileNumber = scan.nextLine();
 		System.out.println("Enter password:");
 		String password = scan.nextLine();
+		System.out.println("Enter Email");
+		String email = scan.nextLine();
 		
 		System.out.println("first name is : " +firstName);
 		System.out.println("first name is valid ? " + firstName(firstName));
@@ -32,6 +35,8 @@ public class RegularExpression {
 		System.out.println("Mobile No valid ? " + mobileNumber(mobileNumber));
 		
 		System.out.println("Password valid ? " + password(password));
+		
+		System.out.println(regex.validEmail(email));
 		
 	}
 	
@@ -57,6 +62,10 @@ public class RegularExpression {
 			return true;
 		}
 		return false;
+	}
+	
+	public static boolean validEmail(String email){
+		return email.matches("^(abc)[0-9+-]*(@)[0-9a-z]{1,}(.com){1,}(.au)*$|^(abc)[0-9+-]*(@)[0-9a-z]{1,}(.net){1}$");
 	}
 
 
